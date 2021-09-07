@@ -1,0 +1,166 @@
+version: "2.0"
+
+stories:
+
+- story: happy path1
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: mac_book
+  - action: utter_mac_book
+  - intent: macbook_models
+  - action: utter_macbook_models
+  - intent: macbook_mini
+  - action: utter_macbook_mini
+
+- story: happy path2
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: mac_book
+  - action: utter_mac_book
+  - intent: macbook_models
+  - action: utter_macbook_models
+  - intent: macbook_pro
+  - action: utter_macbook_pro
+
+- story: happy path3
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: mac_book
+  - action: utter_mac_book
+  - intent: macbook_models
+  - action: utter_macbook_models
+  - intent: macbook_air
+  - action: utter_macbook_air
+
+- story: accessories path1
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: macbook_accessories
+  - action: utter_macbook_accessories
+  - intent: macbook_charger
+  - action: utter_macbook_charger
+
+- story: accessories path2
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: macbook_accessories
+  - action: utter_macbook_accessories
+  - intent: macbook_earphones
+  - action: utter_macbook_earphones
+
+- story: accessories path3
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: macbook_accessories
+  - action: utter_macbook_accessories
+  - intent: macbook_airpods
+  - action: utter_macbook_airpods
+
+- story: iphone path
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: iphone
+  - action: utter_iphone  
+
+- story: name path
+  steps:
+  - intent: bot_name
+  - action: utter_bot_name
+
+- story: sports
+  steps:
+  - intent: bot_sports
+  - action: utter_bot_sports
+  - intent: fav_player
+  - action: utter_fav_player
+  - intent: reason
+  - action: utter_reason
+
+- story: mobilenumber
+  steps:
+  - intent: give_mobilenum
+  - action: utter_mobile_number
+  - intent: mobile_number
+    entities:
+      - mobilenumber: 8209829808
+      - email: vinay@gmail.com
+  - slot_was_set:
+      - mobilenumber: 8209829808
+      - email: vinay@gmail.com
+  - action: utter_mn
+
+
+- story: produts path
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: products
+    entities:
+      - product: laptop
+  - action: utter_products
+
+
+- story: datesports
+  steps:
+  - intent: askbot
+  - action: utter_askbot
+  - intent: joinsports
+    entities:
+      - time: "2015-01-26T06:00:00.000+05:30"
+  - slot_was_set:
+      - time: "2015-01-26T06:00:00.000+05:30"
+  - action: utter_joinsports
+
+- story: feedbackform
+  steps:
+  - intent: userfeedback
+  - action: utter_userfeedback
+  - intent: firstname
+    entities:
+      - firstname: vinay
+  - slot_was_set:
+      - firstname: vinay
+  - action: utter_firstname
+  - intent: lastname
+    entities:
+      - lastname: varma
+  - slot_was_set:
+      - lastname: varma
+  - action: utter_mobile_number
+  - intent: mobile_number
+    entities:
+      - mobilenumber: 8209829808
+      - email: vinay@gmail.com
+  - slot_was_set:
+      - mobilenumber: 8209829808
+      - email: vinay@gmail.com
+  - action: utter_feedback
+  - intent: feedback
+    entities:
+      - feedback: very happy
+  - slot_was_set:
+      - feedback: very happy
+  - action: utter_details
+  - intent: positive
+  - action: utter_positive
+
+
+
+
+
+
+
+#    entities:
+#      - mobilenumber: 8209829808
+#      - email: vinay@gmail.com
+#  - slot_was_set:
+#      - mobilenumber: 8209829808
+#      - email: vinay@gmail.com
+#  - action: utter_mn

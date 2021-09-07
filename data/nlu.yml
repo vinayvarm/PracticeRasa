@@ -1,0 +1,286 @@
+version: "2.0"
+
+nlu:
+- intent: start
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: bot_name
+  examples: |
+    - whats your name
+    - how can i call you
+    - let me know your name
+
+
+- intent: bot_sports
+  examples: |
+    - whats your favourite sport
+    - hey,which sports you play in free time
+    - mention your favourite sports
+
+- intent: fav_player
+  examples: |
+    - who is your go player
+    - who is ur inspiration in cricket
+    - who is the best player in cricket
+
+- intent: reason
+  examples: |
+    - why do you like him
+    - why he is the best player
+    - may i know why he is the best
+
+- intent: iphone
+  examples: |
+    - is iphone available
+    - whats the cost of iphone
+
+- intent: mac_book
+  examples: |
+    - whats the cost of [mac book]{"entity": "laptop","value":"macbook"}
+    - i want [macbook]{"entity": "laptop"}
+
+- intent: macbook_models
+  examples: |
+    - show me  the best  models
+    - show all the available models
+
+- intent: macbook_accessories
+  examples: |
+    - i want to buy [macbook] {"entity":"laptop","value":"macbook"} accessories
+    - show me [mac] {"entity":"laptop","value":"macbook"} accessories
+    - i want to buy best accessories for my mac
+
+- intent: macbook_mini
+  examples: |
+    - i want to buy mini
+    - i prefer mini
+    - mini good for me
+
+- intent: macbook_pro
+  examples: |
+    - i want to buy pro
+    - i prefer pro
+    - pro good for me
+
+- intent: macbook_air
+  examples: |
+    - i want to buy air model
+    - i prefer mac_air
+    - macair will be good for me
+
+- intent: macbook_charger
+  examples: |
+    - i want to buy macbook_charger
+    - i prefer macbook_charger
+    - macebook charger available?
+
+- intent: macbook_earphones
+  examples: |
+    - i want to buy macbook_earphones
+    - i prefer macbook_earphones
+    - macbook_earphones available?
+
+- intent: macbook_airpods
+  examples: |
+    - i want to buy macbook_airpods
+    - i prefer macbook_airpods
+    - macbook_airpods available?
+
+- intent: mobile_number
+  examples: |
+     - my number is [7845961230]{"entity": "mobilenumber"} and my email is [vinay@gmail.com]{"entity":"email"}
+     - you can reach me through [9867534210]{"entity": "mobilenumber"} and email [vin456@gmail.com]{"entity":"email"}
+     - call me [9512634870]{"entity": "mobilenumber"} and [vin@yaho.com]{"entity":"email"}
+
+- intent: give_mobilenum
+  examples: |
+     - hi, i want to give my mobile number and email
+     - want to share my mobile number and email with you
+
+- regex: mobilenumber
+  examples: |
+    - \d+
+
+- regex: email
+  examples: |
+    - [a-zA-Z0-9._]+[@][a-zA-Z0-9]+[.][a-zA-Z]+
+
+- intent: products
+  examples: |
+    - hi, i want to buy [mobile]{"entity":"product"}
+    - hi, i want to buy [laptop]{"entity":"product"}
+    - hi, i want to buy [smart watch]{"entity":"product"}
+    - i want to buy [lappy]{"entity":"product"}
+    - i want to buy [system]{"entity":"product"}
+    - i want to buy [watch]{"entity":"product"}
+
+- synonym: laptop
+  examples: |
+    - lappy
+    - system
+    - desktop
+    - thinkpad
+
+- lookup: product
+  examples: |
+    - head phones
+    - ear phones
+    - air pods
+    - mobile charger
+    - ipad
+    - laptop charger
+    - lappy lan cable
+
+- intent: askbot
+  examples: |
+     - hi, i want to join in sports academy
+     - can i join in sports
+
+- intent: joinsports
+  examples: |
+     - i will join on 30th august
+     - i will join on twenty
+
+- intent: userfeedback
+  examples: |
+    - hi, happy with service, want to give feedback
+    - hi, feeling so happy with service, want to give feedback
+
+- intent: firstname
+  examples: |
+    - hi, my firstname is [vinay]{"entity":"firstname"}
+    - hi, my firstname is [vijay]{"entity":"firstname"}
+
+- intent: lastname
+  examples: |
+    - hi, my lastname is [varma]{"entity":"lastname"}
+    - hi, my lastname is [kumar]{"entity":"lastname"}
+
+- intent: feedback
+  examples: |
+    - [satisfied]{"entity":"feedback"}
+    - [very happy]{"entity":"feedback"}
+
+- intent: positive
+  examples: |
+    - yes, everything is fine
+    - yes, great service
+
+- intent: gadgets
+  examples: |
+    - hi, i want to fill form
+    - hi, provide form to fill details
+
+- intent: give_fullname
+  examples: |
+    - hi, my name is [surya kumar]{"entity":"fullname"}
+    - hi, my name is [rahul dravid]{"entity":"fullname"}
+
+- intent: sample
+  examples: |
+    - hi, i want to fill contact form
+
+- intent: television
+  examples: |
+    - hi, i want to buy tv
+    - hi, i want to have television
+
+
+- intent: sony_bravia
+  examples: |
+    - hi, i want to buy sony bravia
+
+- intent: samsung
+  examples: |
+    - hi, i want to buy samsung
+
+- intent: mitv
+  examples: |
+    - hi, i want to mi tv

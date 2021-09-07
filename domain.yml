@@ -1,0 +1,261 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- start:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- bot_name:
+    use_entities: true
+- bot_sports:
+    use_entities: true
+- fav_player:
+    use_entities: true
+- reason:
+    use_entities: true
+- mac_book:
+    use_entities: true
+- iphone:
+    use_entities: true
+- macbook_models:
+    use_entities: true
+- macbook_accessories:
+    use_entities: true
+- macbook_mini:
+    use_entities: true
+- macbook_pro:
+    use_entities: true
+- macbook_air:
+    use_entities: true
+- macbook_charger:
+    use_entities: true
+- macbook_earphones:
+    use_entities: true
+- macbook_airpods:
+    use_entities: true
+- mobile_number
+- give_mobilenum
+- products
+- askbot
+- joinsports
+- userfeedback
+- firstname
+- lastname
+- feedback
+- positive
+- gadgets
+- give_fullname
+- sample
+- television
+- sony_bravia
+- samsung
+- mitv
+entities:
+  - laptop
+  - mobilenumber
+  - email
+  - product
+  - time
+  - ordinal
+  - firstname
+  - lastname
+  - feedback
+  - fullname
+
+
+slots:
+  time:
+    type: text
+  mobilenumber:
+    type: text
+  email:
+    type: text
+  firstname:
+    type: text
+  lastname:
+    type: text
+  feedback:
+    type: text
+  product:
+    type: text
+  fullname:
+    type: text
+responses:
+  utter_start:
+  - buttons:
+    - payload: /mac_book
+      title: Mac Book
+    - payload: /iphone
+      title: Iphone
+    text: Hey! Here are the products u can purchase from us?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_bot_name:
+  - text: my name is sarah
+  utter_bot_sports:
+  - text: my favorite sport is cricket
+  utter_fav_player:
+  - text: Rahul Dravid
+  utter_reason:
+  - text: Great player with patience and so down to earth
+  utter_mac_book:
+  - buttons:
+    - payload: /macbook_models
+      title: MacBook ModelsJ
+    - payload: /macbook_accessories
+      title: MacBook_Accessories
+    text: Hey there, select one of the above
+  utter_iphone:
+  - text: Thanks for selecting iphone
+  utter_macbook_models:
+  - buttons:
+    - payload: /macbook_mini
+      title: MacBook_Mini
+    - payload: /macbook_pro
+      title: MacBook_Pro
+    - payload: /macbook_air
+      title: MacBook_Air
+    text: Hey! These are the products u can purchase from us
+  utter_macbook_mini:
+  - text: Thanks for selecting macbook mini
+  utter_macbook_pro:
+  - image: https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_IN?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1613672874000
+    text: Thanks for selecting macbook pro
+  utter_macbook_air:
+  - text: Thanks for selecting macbook air
+  - text: For more information visit below link https://www.apple.com/in/macbook-air/
+  utter_macbook_accessories:
+  - buttons:
+    - payload: /macbook_charger
+      title: macbook_charger
+    - payload: /macbook_earphones
+      title: macbook_earphones
+    - payload: /macbook_airpods
+      title: macbook_airpods
+    text: Hey! These are the  products u can purchase from us
+
+  utter_macbook_charger:
+  - text: Thanks for selecting macbook charger
+  utter_macbook_earphones:
+  - text: Thanks for selecting macbook_earphones
+  utter_macbook_airpods:
+  - text: Thanks for selecting macbook_airpods
+  utter_mobile_number:
+  - text: thanks for lastname,provide ur mobile num and email
+  utter_products:
+  - text: "please mention the specific model of ur requirement"
+  utter_askbot:
+  - text: nice to hear, when will you join
+  utter_joinsports:
+  - text: thanks for telling u entered {time}
+  utter_mn:
+  - text: thanks ur info is {mobilenumber} and {email}
+  utter_userfeedback:
+  - text: happy to hear that, pls tell us ur firstname
+  utter_firstname:
+  - text: "thanks for firstname, now enter lastname"
+  utter_lastname:
+  - text: "thanks for lastname, now enter mobilenumber"
+  utter_feedback:
+  - text: "thanks for the email and mobile, pls give feedback"
+  utter_details:
+  - text: "thanks for feedback here are the details {firstname} {lastname} {mobilenumber} {email} {feedback}
+   is everything fine ?"
+  utter_positive:
+  - text: "great see u soon bye"
+  utter_ask_firstname:
+  - text: "whats your firstname"
+  utter_ask_product:
+  - text: "which product u want"
+  utter_ask_email:
+  - text: "tell us your email"
+  utter_submit:
+  - text: "thanks for submitting"
+  utter_ask_fullname:
+  - text: "whats your fullname"
+  utter_ask_mobilenumber:
+  - text: "whats your mobile number"
+  utter_ask_feedback:
+  - text: "tell us your feedback"
+  utter_test:
+  - text: "thank you for your valuable feedback {username}"
+  - text: "thank you for your valuable feedback {username}"
+  utter_television:
+  - text: "which model you want to buy"
+  utter_sony_bravia:
+  - text: buy sony here {link1}
+  utter_samsung:
+  - text: buy samsung here {link2}
+  utter_mitv:
+  - text: buy mitv here {link3}
+
+
+actions:
+  - action_hello_world
+
+
+
+forms:
+  userdetails_form:
+    required_slots:
+      firstname:
+        - type: from_entity
+          entity: firstname
+      product:
+        - type: from_text
+      email:
+        - type: from_entity
+          entity: email
+
+  contact_form:
+    required_slots:
+      fullname:
+        - type: from_entity
+          entity: fullname
+      mobilenumber:
+        - type: from_text
+      feedback:
+        - type: from_text
+
+
+
+
+
+
+
+
+e2e_actions: []
+
+
+# utter_television:
+#  - buttons:
+#      - payload: /sonybravia
+#        title: Sony_Bravia
+#      - payload: /samsung
+#        title: Samsung
+#      - payload: /mitv
+#        title: Mi_Tv
+#      text: Hey! These are the TV products u can purchase from us
